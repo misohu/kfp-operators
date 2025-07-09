@@ -28,8 +28,8 @@ options:
   cache-image:
     type: string
     default: "misohu/test:1.1.0"
-    description: Which image to list as the backing image for a pipeline run step
-      pulled from cache
+    description: Which image to list as the backing image for a pipeline run 
+      step pulled from cache
   cache-enabled:
     type: boolean
     default: true
