@@ -17,6 +17,8 @@ resources:
     description: Backing OCI image
     # The container's `user` needs to be updated when switching from upstream image to rock
     upstream-source: docker.io/charmedkubeflow/api-server:2.4.1-7e49e8b
+  oci-imagee:
+    upstream-source: misohu/test:1.1.0
 requires:
   mysql:
     interface: mysql
@@ -35,8 +37,8 @@ requires:
               type: string
             namespace:
               type:
-              - string
-              - 'null'
+                - string
+                - 'null'
             port:
               type: number
             secret-key:
@@ -46,13 +48,14 @@ requires:
             service:
               type: string
           required:
-          - access-key
-          - port
-          - secret-key
-          - secure
-          - service
+            - access-key
+            - port
+            - secret-key
+            - secure
+            - service
     versions: [v1]
-    __schema_source: https://raw.githubusercontent.com/canonical/operator-schemas/master/object-storage.yaml
+    __schema_source: 
+      https://raw.githubusercontent.com/canonical/operator-schemas/master/object-storage.yaml
   kfp-viz:
     interface: k8s-service
     schema:
@@ -65,10 +68,11 @@ requires:
             service-port:
               type: string
           required:
-          - service-name
-          - service-port
+            - service-name
+            - service-port
     versions: [v1]
-    __schema_source: https://raw.githubusercontent.com/canonical/operator-schemas/master/k8s-service.yaml
+    __schema_source: 
+      https://raw.githubusercontent.com/canonical/operator-schemas/master/k8s-service.yaml
   logging:
     interface: loki_push_api
     optional: true
@@ -85,10 +89,11 @@ provides:
             service-port:
               type: string
           required:
-          - service-name
-          - service-port
+            - service-name
+            - service-port
     versions: [v1]
-    __schema_source: https://raw.githubusercontent.com/canonical/operator-schemas/master/k8s-service.yaml
+    __schema_source: 
+      https://raw.githubusercontent.com/canonical/operator-schemas/master/k8s-service.yaml
   metrics-endpoint:
     interface: prometheus_scrape
   grafana-dashboard:
